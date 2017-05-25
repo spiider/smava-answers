@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <body>
+
+      <p id="result"></p>
+
+        <script>
+          function usersComparator(userA, userB) {
+            if(userA.registrationDate.getTime() !== userB.registrationDate.getTime()) {
+                return userA.registrationDate.getTime() - userB.registrationDate.getTime();
+            }
+            return userA.requestedAmount - userB.requestedAmount;
+          }
+
+          function sortUsers(users) {
+            return users.sort(usersComparator).filter(function(el) {
+              return el.active;
+            });
+          }
+
+        var list =  sortUsers([
+            {id: 2, active: false, registrationDate: new Date(2016, 11, 1), requestedAmount: 10000},
+            {id: 1, active: false, registrationDate: new Date(2016, 10, 15), requestedAmount: 5000},
+            {id: 3, active: true,  registrationDate: new Date(2016, 10, 14), requestedAmount: 5000},
+            {id: 5, active: true,  registrationDate: new Date(2017, 0, 2), requestedAmount: 5000},
+            {id: 4, active: true,  registrationDate: new Date(2016, 10, 14), requestedAmount: 5500},
+          ]);
+
+          for(var i =0; i < list.length; i +=1) {
+            document.write('<p>'+JSON.stringify(list[i])+'</p>');
+          }
+        </script>
+    </body>
+</html>
