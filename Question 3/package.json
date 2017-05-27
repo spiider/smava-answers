@@ -1,29 +1,18 @@
 {
+  "name": "my-app",
+  "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "build": "node packages/react-scripts/scripts/build.js",
-    "changelog": "lerna-changelog",
-    "create-react-app": "tasks/cra.sh",
-    "e2e": "tasks/e2e-simple.sh",
-    "postinstall": "lerna bootstrap && cd packages/react-error-overlay/ && npm run build:prod",
-    "publish": "tasks/release.sh",
-    "start": "node packages/react-scripts/scripts/start.js",
-    "test": "node packages/react-scripts/scripts/test.js --env=jsdom",
-    "format": "prettier --trailing-comma es5 --single-quote --write 'packages/*/*.js' 'packages/*/!(node_modules)/**/*.js'",
-    "precommit": "lint-staged"
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "eslint": "3.19.0",
-    "husky": "^0.13.2",
-    "lerna": "2.0.0-beta.38",
-    "lerna-changelog": "^0.2.3",
-    "lint-staged": "^3.3.1",
-    "prettier": "^0.21.0"
+    "react-scripts": "1.0.7"
   },
-  "lint-staged": {
-    "*.js": [
-      "prettier --trailing-comma es5 --single-quote --write",
-      "git add"
-    ]
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
