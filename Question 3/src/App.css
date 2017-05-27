@@ -1,8 +1,9 @@
 :root {
   --main-radius: 5px;
   --btn-orange: #f1a41a;
-  --btn-grey: lightgrey;
+  --btn-grey: #e0e1e3;
   --text-darkgrey: #5a5a5a;
+  --text-red: red;
 }
 
 h1 {
@@ -37,6 +38,8 @@ h1 {
   height: 40px;
   border: solid #c3c3c3 1px;
   font-size: 14px;
+  padding-left: 7px;
+  margin-bottom: 15px;
 }
 
 .styled-form button {
@@ -58,4 +61,26 @@ h1 {
   border-radius: var(--main-radius);
   color: var(--text-darkgrey);
   margin: 0 auto;
+  cursor: pointer;
+}
+
+.error {
+  color: var(--text-red);
+  margin-top: -10px;
+  font-size: 12px;
+}
+
+.error-bank {
+  color: var(--text-red);
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+.remove-btn {
+  float: right;
+  display: inline-flex;
+  margin-top: -54px;
+  margin-right: -44px;
+  font-size: 32px;
+  cursor: pointer;
 }
